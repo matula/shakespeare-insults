@@ -1,0 +1,247 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta charset=utf-8>
+        <title>Shakespearean Insult Kit</title>
+
+        <!--[if lt IE 9]> HTML5Shiv
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+ 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+ 		<style>
+ 		.vertical-center {
+		  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+		  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+		  display: flex;
+		  align-items: center;
+		  font-size: 2em;
+
+		}
+		#insult {
+			cursor: pointer;
+		}
+ 		</style>
+    </head>
+    <body>
+        <div class="jumbotron vertical-center text-center">
+		  <div class="container" id="insult"></div>
+		</div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+        <script>
+var c1 = [
+"artless",
+"bawdy",
+"beslubbering",
+"bootless",
+"churlish",
+"cockered",
+"clouted",
+"craven",
+"currish",
+"dankish",
+"dissembling",
+"droning",
+"errant",
+"fawning",
+"fobbing",
+"froward",
+"frothy",
+"gleeking",
+"goatish",
+"gorbellied",
+"impertinent",
+"infectious",
+"jarring",
+"loggerheaded",
+"lumpish",
+"mammering",
+"mangled",
+"mewling",
+"paunchy",
+"pribbling",
+"puking",
+"puny",
+"qualling",
+"rank",
+"reeky",
+"roguish",
+"ruttish",
+"saucy",
+"spleeny",
+"spongy",
+"surly",
+"tottering",
+"unmuzzled",
+"vain",
+"venomed",
+"villainous",
+"warped",
+"wayward",
+"weedy",
+"yeasty",
+"cullionly",
+"fusty",
+"caluminous",
+"wimpled",
+"burly-boned",
+"misbegotten",
+"odiferous",
+"poisonous",
+"fishified",
+"Wart-necked",
+];
+
+var c2 = [
+"base-court",
+"bat-fowling",
+"beef-witted",
+"beetle-headed",
+"boil-brained",
+"clapper-clawed",
+"clay-brained",
+"common-kissing",
+"crook-pated",
+"dismal-dreaming",
+"dizzy-eyed",
+"doghearted",
+"dread-bolted",
+"earth-vexing",
+"elf-skinned",
+"fat-kidneyed",
+"fen-sucked",
+"flap-mouthed",
+"fly-bitten",
+"folly-fallen",
+"fool-born",
+"full-gorged",
+"guts-griping",
+"half-faced",
+"hasty-witted",
+"hedge-born",
+"hell-hated",
+"idle-headed",
+"ill-breeding",
+"ill-nurtured",
+"knotty-pated",
+"milk-livered",
+"motley-minded",
+"onion-eyed",
+"plume-plucked",
+"pottle-deep",
+"pox-marked",
+"reeling-ripe",
+"rough-hewn",
+"rude-growing",
+"rump-fed",
+"shard-borne",
+"sheep-biting",
+"spur-galled",
+"swag-bellied",
+"tardy-gaited",
+"tickle-brained",
+"toad-spotted",
+"unchin-snouted",
+"weather-bitten",
+"whoreson",
+"malmsey-nosed",
+"rampallian",
+"lily-livered",
+"scurvy-valiant",
+"brazen-faced",
+"unwash'd",
+"bunch-back'd",
+"leaden-footed",
+"muddy-mettled",
+"pigeon-liver'd",
+"scale-sided"
+];
+
+var c3 = [
+"apple-john",
+"baggage",
+"barnacle",
+"bladder",
+"boar-pig",
+"bugbear",
+"bum-bailey",
+"canker-blossom",
+"clack-dish",
+"clotpole",
+"coxcomb",
+"codpiece",
+"death-token",
+"dewberry",
+"flap-dragon",
+"flax-wench",
+"flirt-gill",
+"foot-licker",
+"fustilarian",
+"giglet",
+"gudgeon",
+"haggard",
+"harpy",
+"hedge-pig",
+"horn-beast",
+"hugger-mugger",
+"joithead",
+"lewdster",
+"lout",
+"maggot-pie",
+"malt-worm",
+"mammet",
+"measle",
+"minnow",
+"miscreant",
+"moldwarp",
+"mumble-news",
+"nut-hook",
+"pigeon-egg",
+"pignut",
+"puttock",
+"pumpion",
+"ratsbane",
+"scut",
+"skainsmate",
+"strumpet",
+"varlot",
+"vassal",
+"whey-face",
+"wagtail",
+"knave",
+"blind-worm",
+"popinjay",
+"scullian",
+"jolt-head",
+"malcontent",
+"devil-monk",
+"toad",
+"rascal",
+"Basket-Cockle"
+];
+
+Array.prototype.randomElement = function () {
+    return this[Math.floor(Math.random() * this.length)]
+}
+
+$(function() {
+makeInsult();
+$('#insult').on('click', function() {
+makeInsult();
+});
+});
+
+function makeInsult() {
+	var text = "Thou " + c1.randomElement() + ", " + c2.randomElement() + " " + c3.randomElement();
+	$('#insult').text(text);
+}
+        </script>
+    </body>
+</html>
